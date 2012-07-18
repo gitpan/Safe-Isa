@@ -5,7 +5,7 @@ use warnings FATAL => 'all';
 use Scalar::Util qw(blessed);
 use base qw(Exporter);
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 our @EXPORT = qw($_call_if_object $_isa $_can $_does $_DOES);
 
@@ -69,9 +69,9 @@ And just in case we missed a method:
 
 Or to re-use a previous example for purposes of explication:
 
-  $foo->$_call_if_method(isa => 'Foo');  # true
-  $bar->$_call_if_method(isa => 'Foo');  # true
-  $blam->$_call_if_method(isa => 'Foo'); # false, no boom today
+  $foo->$_call_if_object(isa => 'Foo');  # true
+  $bar->$_call_if_object(isa => 'Foo');  # true
+  $blam->$_call_if_object(isa => 'Foo'); # false, no boom today
 
 =head1 DESCRIPTION
 
