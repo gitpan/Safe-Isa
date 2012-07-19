@@ -5,7 +5,7 @@ use warnings FATAL => 'all';
 use Scalar::Util qw(blessed);
 use base qw(Exporter);
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 our @EXPORT = qw($_call_if_object $_isa $_can $_does $_DOES);
 
@@ -103,6 +103,11 @@ is equivalent to
     }
   };
 
+Note that we don't handle trying class names, because many things are valid
+class names that you might not want to treat as one (like say "Matt") - the
+C<is_module_name> function from L<Module::Runtime> is a good way to check for
+somthing you might be able to call methods on if you want to do that.
+
 =head1 EXPORTS
 
 =head2 $_isa
@@ -133,9 +138,9 @@ returns nothing.
 If called on an object, calls C<DOES> on it and returns the result, otherwise
 returns nothing.
 
-=head2 $_call_if_method
+=head2 $_call_if_object
 
-  $maybe_an_object->$_call_if_method(method_name => @args);
+  $maybe_an_object->$_call_if_object(method_name => @args);
 
 If called on an object, calls C<method_name> on it and returns the result,
 otherwise returns nothing.

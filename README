@@ -79,6 +79,12 @@ DESCRIPTION
         }
       };
 
+    Note that we don't handle trying class names, because many things are
+    valid class names that you might not want to treat as one (like say
+    "Matt") - the "is_module_name" function from Module::Runtime is a good
+    way to check for somthing you might be able to call methods on if you
+    want to do that.
+
 EXPORTS
   $_isa
       $maybe_an_object->$_isa('Foo');
@@ -104,8 +110,8 @@ EXPORTS
     If called on an object, calls "DOES" on it and returns the result,
     otherwise returns nothing.
 
-  $_call_if_method
-      $maybe_an_object->$_call_if_method(method_name => @args);
+  $_call_if_object
+      $maybe_an_object->$_call_if_object(method_name => @args);
 
     If called on an object, calls "method_name" on it and returns the
     result, otherwise returns nothing.
