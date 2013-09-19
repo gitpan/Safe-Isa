@@ -3,9 +3,9 @@ package Safe::Isa;
 use strict;
 use warnings FATAL => 'all';
 use Scalar::Util qw(blessed);
-use base qw(Exporter);
+use Exporter 5.57 qw(import);
 
-our $VERSION = '1.000003';
+our $VERSION = '1.000004';
 
 our @EXPORT = qw($_call_if_object $_isa $_can $_does $_DOES);
 
@@ -106,7 +106,7 @@ is equivalent to
 Note that we don't handle trying class names, because many things are valid
 class names that you might not want to treat as one (like say "Matt") - the
 C<is_module_name> function from L<Module::Runtime> is a good way to check for
-somthing you might be able to call methods on if you want to do that.
+something you might be able to call methods on if you want to do that.
 
 =head1 EXPORTS
 

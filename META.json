@@ -4,7 +4,7 @@
       "mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "ExtUtils::MakeMaker version 6.76, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -25,25 +25,24 @@
             "ExtUtils::MakeMaker" : "0"
          }
       },
-      "configure" : {
-         "requires" : {
-            "ExtUtils::MakeMaker" : "0"
-         }
-      },
       "runtime" : {
-         "requires" : {}
+         "requires" : {
+            "Exporter" : "5.57",
+            "Scalar::Util" : "0"
+         }
       }
    },
    "release_status" : "stable",
    "resources" : {
-      "homepage" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=p5sagit/Safe-Isa.git",
+      "bugtracker" : {
+         "mailto" : "bug-Safe-Isa@rt.cpan.org",
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Safe-Isa"
+      },
       "repository" : {
-         "url" : "git://git.shadowcat.co.uk/p5sagit/Safe-Isa.git"
+         "type" : "git",
+         "url" : "git://git.shadowcat.co.uk/p5sagit/Safe-Isa.git",
+         "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=p5sagit/Safe-Isa.git"
       }
    },
-   "version" : "1.000003",
-   "x_PREREQ_PM" : {
-      "Exporter" : 0,
-      "Scalar::Util" : 0
-   }
+   "version" : "1.000004"
 }
